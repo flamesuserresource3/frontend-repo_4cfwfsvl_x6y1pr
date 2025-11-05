@@ -1,7 +1,7 @@
 import Spline from '@splinetool/react-spline';
 import { ArrowRight, ShieldCheck, Camera, Bot } from 'lucide-react';
 
-export default function HeroSpline() {
+export default function HeroSpline({ onStartAssessment, onTryBot }) {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
@@ -19,15 +19,15 @@ export default function HeroSpline() {
               PostureAI: valutazione posturale e riabilitazione guidata
             </h1>
             <p className="mt-4 text-lg text-slate-700">
-              Analisi posturale con fotocamera, prescrizione di esercizi personalizzati, supporto nutrizionale e AI Coach integrato in un'unica piattaforma.
+              Analisi posturale con fotocamera, banca esercizi e AI Coach. Design professionale, performance e accessibilità.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="#valutazione" className="inline-flex items-center justify-center gap-2 rounded-md bg-slate-900 px-5 py-3 text-white shadow hover:bg-slate-800">
+              <button onClick={onStartAssessment} className="inline-flex items-center justify-center gap-2 rounded-md bg-slate-900 px-5 py-3 text-white shadow hover:bg-slate-800">
                 <Camera className="h-4 w-4" /> Avvia screening con camera
-              </a>
-              <a href="#aicoach" className="inline-flex items-center justify-center gap-2 rounded-md bg-white/90 ring-1 ring-slate-200 px-5 py-3 text-slate-900 hover:bg-white">
+              </button>
+              <button onClick={onTryBot} className="inline-flex items-center justify-center gap-2 rounded-md bg-white/90 ring-1 ring-slate-200 px-5 py-3 text-slate-900 hover:bg-white">
                 <Bot className="h-4 w-4" /> Prova AI Coach <ArrowRight className="h-4 w-4" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
